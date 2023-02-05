@@ -1,9 +1,15 @@
-.menu-buttons{
+.content-body {
     display: flex;
     flex-direction: column;
     margin-top: 100px;
     margin-left: 150px;
+}
+
+.menu-buttons{
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    gap: 80px;
 }
 
 .menu-item{
