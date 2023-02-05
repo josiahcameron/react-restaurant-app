@@ -1,0 +1,39 @@
+.menu-buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 150px;
+    justify-content: space-between;
+}
+
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.menu-item-name{
+    font-weight: 900;
+
+}
+
+.menu-item-description{
+    align-items: center;
+}
+
+.price{
+    margin-top: 20px;
+}
+.button-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-img{
+display: flex;
+max-width: 30%;
+min-height: 100%;
+
+}
