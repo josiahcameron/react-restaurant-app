@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import OrderForm from "./Components/Choose Item Form/OrderForm";
+import OrderForm from "../../Choose Item Form/OrderForm";
 
 function Spaghetti() {
   const Spaghetti = {
@@ -37,7 +37,7 @@ function Spaghetti() {
         </div>
         <img className="item-img" src={Spaghetti.img} />
       </Button>
-      <OrderForm show={show} setShow={bool} />
+      <OrderForm show={show} setShow={setShow} />
     </div>
   );
 }
