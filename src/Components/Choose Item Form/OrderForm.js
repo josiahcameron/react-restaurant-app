@@ -3,20 +3,24 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-function OrderForm({ show, setShow }) {
+function OrderForm({ show, setShow, addItem, menuItem }) {
   // Show is set to false by default; will be attached to the buttons
 
-  const handleClose = () => setShow(false);
+  const handleClose = (e) => {
+    e.preventDefault();
+
+    this.addItem(this.menuItem);
+    console.log(orders);
+
+    setShow(false);
+  };
 
   return (
     <div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <img
-            className="selected-item-img"
-            src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800"
-          />
-          <Modal.Title>Modal heading</Modal.Title>
+          <img className="selected-item-img" src={menuItem.img} />
+          <Modal.Title>{menuItem.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>

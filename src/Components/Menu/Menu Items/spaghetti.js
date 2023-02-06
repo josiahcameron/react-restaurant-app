@@ -2,13 +2,15 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import OrderForm from "../../Choose Item Form/OrderForm";
 
-function Spaghetti() {
+function Spaghetti(addItem) {
   const Spaghetti = {
     name: "Spaghetti",
     description: "Pciriole spirali tortellini conchiglioni lumache.",
     price: "$10.50",
     img: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800",
   };
+
+  const menuItem = Spaghetti;
 
   const [show, setShow] = useState(false);
 
@@ -37,7 +39,12 @@ function Spaghetti() {
         </div>
         <img className="item-img" src={Spaghetti.img} />
       </Button>
-      <OrderForm show={show} setShow={setShow} />
+      <OrderForm
+        show={show}
+        setShow={setShow}
+        menuItem={menuItem}
+        addItem={addItem}
+      />
     </div>
   );
 }
