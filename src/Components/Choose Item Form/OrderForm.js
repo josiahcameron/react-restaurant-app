@@ -24,25 +24,10 @@ function OrderForm({ show, setShow, selectedItem, addItem }) {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Enter Name</Form.Label>
-              <Form.Control
-                type="name"
-                placeholder="Your Name Here"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Special Instructions</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                placeholder="Put Special Requests Here (Extra Utensils, Parmesan, Etc.)"
-              />
-            </Form.Group>
+            <Form.Label>Description: </Form.Label>
+            <Form.Text id="passwordHelpBlock" muted>
+              {selectedItem.description}
+            </Form.Text>
           </Form>
         </Modal.Body>
         <Modal.Footer>
