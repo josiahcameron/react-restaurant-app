@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function ViewOrder() {
+function ViewOrder({ orders }) {
   // The default value on open will be false
   const [open, setOpen] = useState(false);
 
@@ -20,14 +20,9 @@ function ViewOrder() {
     const order = {
       custname,
       itemname,
-      qty,
       price,
       specialInstruction,
     };
-
-    // addBlog(blog);
-    // setTitle("");
-    // setBody("");
   };
   return (
     <>

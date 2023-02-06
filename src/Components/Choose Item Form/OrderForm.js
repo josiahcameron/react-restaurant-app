@@ -3,15 +3,15 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-function OrderForm({ show, setShow, addItem, menuItem }) {
+function OrderForm({ show, setShow, selectedItem, addItem }) {
   // Show is set to false by default; will be attached to the buttons
 
   const handleClose = (e) => {
-    e.preventDefault();
+    setShow(false);
+  };
 
-    this.addItem(this.menuItem);
-    console.log(orders);
-
+  const addToOrder = (e) => {
+    addItem(selectedItem);
     setShow(false);
   };
 
@@ -19,8 +19,8 @@ function OrderForm({ show, setShow, addItem, menuItem }) {
     <div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <img className="selected-item-img" src={menuItem.img} />
-          <Modal.Title>{menuItem.name}</Modal.Title>
+          <img className="selected-item-img" src="#" />
+          <Modal.Title>{selectedItem.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -49,7 +49,7 @@ function OrderForm({ show, setShow, addItem, menuItem }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={addToOrder}>
             Add To Order
           </Button>
         </Modal.Footer>
