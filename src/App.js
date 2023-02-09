@@ -19,7 +19,7 @@ function App() {
     <Container>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
+        <Nav className="me-auto navbar">
           <Nav.Link href="#">All Items</Nav.Link>
           <Nav.Link href="#">Entrees</Nav.Link>
           <Nav.Link href="#">Desserts</Nav.Link>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
@@ -11,15 +11,16 @@ function ViewOrder({ orderItems }) {
 
   const [order, setOrder] = useState([]);
   const [custname, setCustName] = useState("");
-  const [itemname, setItemName] = useState("");
-  const [price, setPrice] = useState("");
   const [specialInstruction, setSpecialInstructions] = useState("");
 
   const orderList = [...orderItems];
+
   const confirmOrder = (e) => {
     e.preventDefault();
     setOrder([custname, orderList, specialInstruction]);
     console.log(order);
+
+    window.localStorage.setItem("order", JSON.stringify(order));
   };
 
   return (
@@ -32,9 +33,9 @@ function ViewOrder({ orderItems }) {
       >
         View Order
       </Button>
-      <div style={{ minHeight: "150px" }}>
+      <div>
         <Collapse in={open} dimension="width">
-          <div id="example-collapse-text">
+          <div id="example-collapse-text" className="order-form">
             <Card style={{ width: "18rem" }}>
               <Card.Header>Your Order: </Card.Header>
               <ListGroup variant="flush">

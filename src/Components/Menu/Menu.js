@@ -2,34 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import OrderForm from "../Choose Item Form/OrderForm";
 import ViewOrder from "../Order/ViewOrder";
-// import MENU_ITEMS from "./Menu Items/MenuItems";
-
-const MENU_ITEMS = [
-  {
-    id: 1,
-    name: "Spaghetti",
-    description: "Pciriole spirali tortellini conchiglioni lumache.",
-    price: "$10.50",
-    img: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800",
-    type: "entree",
-  },
-  {
-    id: 2,
-    name: "Chicken Alfredo",
-    description: "Pciriole spirali tortellini conchiglioni lumache.",
-    price: "$12.00",
-    img: "https://images.pexels.com/photos/11220209/pexels-photo-11220209.jpeg?auto=compress&cs=tinysrgb&w=800",
-    type: "entree",
-  },
-  {
-    id: 3,
-    name: "Chicken Nuggets",
-    description: "Wholesome Classic",
-    price: "$5.00",
-    img: "",
-    type: "entree",
-  },
-];
+import { MENU_ITEMS } from "./Menu Items/MenuItems";
 
 function Menu({}) {
   let [selectedItem, setSelectedItem] = useState(MENU_ITEMS[1]);
@@ -37,7 +10,7 @@ function Menu({}) {
   const [show, setShow] = useState(false);
 
   const buttons = MENU_ITEMS.map((item, index) => (
-    <div className="mb-4 mt-4" key={index}>
+    <div className="mb-1 mt-1" key={index}>
       <Button
         onClick={() => showForm(item)}
         variant="outline-secondary"
@@ -52,7 +25,9 @@ function Menu({}) {
             <span>{item.description}</span>
           </div>
           <div className="price">
-            <span className="item-price">{item.price}</span>
+            <span className="item-price" type="number" step="any">
+              ${item.price}
+            </span>
           </div>
         </div>
         <img className="item-img" src={item.img} />
@@ -62,16 +37,36 @@ function Menu({}) {
 
   const addItem = (item) => {
     setOrderItems([...orderItems, item]);
+    if (orderItems.length > 0) {
+      subTotal(orderItems);
+    }
   };
+
+  function subTotal() {
+    const prices = orderItems.map((item) => item.price);
+    const subtotal = prices.reduce((total, current) => {
+      return total + current;
+    });
+    console.log(subtotal);
+  }
 
   const showForm = (item) => {
     setShow(true);
     setSelectedItem(item);
   };
 
+  // function subTotal() {
+  //   const prices = orderList.filter((item) => item.price.parsefloat());
+  //   const subtotal = prices.reduce((total, current) => {
+  //     return total + current;
+  //   });
+  //   console.log(subtotal);
+  // }
+
   return (
     <section className="content-body">
       <h2>All Items</h2>
+      <ViewOrder orderItems={orderItems} />
       <div className="menu-buttons">{buttons}</div>
       <OrderForm
         show={show}
@@ -79,8 +74,8 @@ function Menu({}) {
         selectedItem={selectedItem}
         orderItems={orderItems}
         addItem={addItem}
+        subTotal={subTotal}
       />
-      <ViewOrder orderItems={orderItems} />
     </section>
   );
 }

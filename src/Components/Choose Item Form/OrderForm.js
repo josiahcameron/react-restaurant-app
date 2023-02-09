@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-function OrderForm({ show, setShow, selectedItem, addItem }) {
+function OrderForm({ show, setShow, selectedItem, addItem, subTotal }) {
   // Show is set to false by default; will be attached to the buttons
 
   const handleClose = (e) => {
