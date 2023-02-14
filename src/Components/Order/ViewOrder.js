@@ -5,22 +5,31 @@ import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 
-function ViewOrder({ orderItems }) {
+function ViewOrder({ orderItems, total, calcOrderTotal }) {
   // The default value on open will be false
   const [open, setOpen] = useState(false);
 
   const [order, setOrder] = useState([]);
   const [custname, setCustName] = useState("");
-  const [specialInstruction, setSpecialInstructions] = useState("");
+  const [specialInstructions, setSpecialInstructions] = useState("");
 
-  const orderList = [...orderItems];
+  // const [test, setTest] = useState(testing)
+  // setTest({custName, orderItems, specialInstructions})
+
 
   const confirmOrder = (e) => {
     e.preventDefault();
-    setOrder([custname, orderList, specialInstruction]);
-    console.log(order);
+    const orderInfo = {
+      custname: custname, 
+      orderItems: orderItems, 
+      specialInstructions: specialInstructions
+    }
+    console.log(orderInfo)
 
-    window.localStorage.setItem("order", JSON.stringify(order));
+    setOrder([custname, [orderItems], specialInstructions]);
+    console.log(custname, [orderItems], specialInstructions);
+
+    window.localStorage.setItem("order", JSON.stringify(orderInfo));
   };
 
   return (
@@ -40,7 +49,7 @@ function ViewOrder({ orderItems }) {
               <Card.Header>Your Order: </Card.Header>
               <ListGroup variant="flush">
                 <ListGroup.Item>Menu Item: </ListGroup.Item>
-                <ListGroup.Item>Price Total</ListGroup.Item>
+                <ListGroup.Item>Price Total: ${calcOrderTotal()}</ListGroup.Item>
 
                 <Form.Group
                   className="mb-3"
@@ -51,7 +60,7 @@ function ViewOrder({ orderItems }) {
                     as="textarea"
                     rows={3}
                     placeholder="Put Special Requests Here (Extra Utensils, Parmesan, Etc.)"
-                    value={specialInstruction}
+                    value={specialInstructions}
                     onChange={(e) => setSpecialInstructions(e.target.value)}
                   />
                   <Form.Label>Your Name</Form.Label>

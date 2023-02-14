@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/navbar.css";
 import "./styles/vieworder.css";
 import "./styles/menu.css";
-import spaghetti from "./Assets/images/spaghetti.png";
+// import spaghetti from "./Assets/images/spaghetti.png";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
