@@ -1,3 +1,11 @@
-.Menu {
-background-color: aquamarine;
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7%;
+    padding-right: 7%;
+    font-size: 20px;
+}
+
+.menu-categories{
+    margin-left: 0;
 }

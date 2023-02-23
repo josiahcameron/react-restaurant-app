@@ -1,7 +1,31 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
+@import url('navbar.css');
+
+
+html {
+    box-sizing: border-box;
 }
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+
+}
+
+body {
+    background: #f4f4f4;
+    color: var(--dark-grey);
+    font-family: var(--primary-font);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.full-app{
+    width: 100%;
+    padding-left: 7%;
+    padding-right: 7%;
+    }
 
 .content-body {
     display: flex;
@@ -18,10 +42,10 @@
     gap: 20px;
 }
 
-.menu-item{
+.menu-item-button{
     display: flex;
     flex-direction: row;
-    width: 700px;
+    width: 500px;
     text-align: left;
     justify-content: space-between;
     max-height: 150px;
