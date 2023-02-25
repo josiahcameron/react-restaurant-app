@@ -34,12 +34,13 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 	const handleOpen = () => {
 		setOpen(!open);
 		displayItem = orderItems.map((item) => item.name);
+		console.log(displayItem);
 		displayItemHTML = orderItems.map((item) => (
 			<li key={item.name}>{item.name}</li>
 		));
 	};
+	const orderList = orderItems;
 
-	console.log(displayItemHTML);
 	return (
 		<>
 			<Button
@@ -56,7 +57,8 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 						<Card style={{ width: "18rem" }}>
 							<Card.Header>Your Order: </Card.Header>
 							<ListGroup variant="flush">
-								<ListGroup.Item>
+								<ListGroup.Item style={{ fontSize: 15 }}>
+									{displayItem}
 									Menu Item:
 									<ul>{displayItemHTML}</ul>
 								</ListGroup.Item>
