@@ -1,97 +1,101 @@
-@import url('navbar.css');
-
+@import url("navbar.css");
 
 html {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
-
+	box-sizing: inherit;
 }
 
 body {
-    background: #f4f4f4;
-    color: var(--dark-grey);
-    font-family: var(--primary-font);
-    font-size: 15px;
-    line-height: 1.55;
-    margin: 0;
+	background: #f4f4f4;
+	color: var(--dark-grey);
+	font-family: var(--primary-font);
+	font-size: 15px;
+	line-height: 1.55;
+	margin: 0;
 }
 
-.full-app{
-    width: 100%;
-    padding-left: 7%;
-    padding-right: 7%;
-    }
+.full-app {
+	width: 100%;
+	padding-left: 7%;
+	padding-right: 7%;
+}
 
 .content-body {
-    display: flex;
-    flex-direction: column;
-    margin: 100px 150px 100px 150px;
-    
+	display: flex;
+	flex-direction: column;
+	margin: 100px 150px 100px 150px;
 }
 
-.menu-buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+.menu-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
-.menu-item-button{
-    display: flex;
-    flex-direction: row;
-    width: 500px;
-    text-align: left;
-    justify-content: space-between;
-    max-height: 150px;
-    max-width: 710px;
+.menu-item-button {
+	display: flex;
+	flex-direction: row;
+	width: 500px;
+	text-align: left;
+	justify-content: space-between;
+	max-height: 150px;
+	max-width: 710px;
 }
 
-.menu-item-name{
-    font-weight: 900;
-
+.menu-item-name {
+	font-weight: 900;
 }
 
-.menu-item-description{
-    align-items: center;
-    text-overflow: ellipsis;
-    overflow:auto; 
-    max-width: 400px;
-    max-height: 60px;
+.menu-item-description {
+	align-items: center;
+	text-overflow: ellipsis;
+	overflow: auto;
+	max-width: 400px;
+	max-height: 60px;
 }
 
-.price{
-    margin-top: 20px;
+.price {
+	margin-top: 20px;
 }
 
-.button-right{
-    display: flex;
-    flex-direction: column;
+.button-right {
+	display: flex;
+	flex-direction: column;
 }
 
-.item-img{
-display: flex;
-max-width: 120px;
-min-height: 60px;
+.item-img {
+	display: flex;
+	max-width: 120px;
+	min-height: 60px;
 }
 
-.button-container{
-    position: relative;
-    margin-top: 0;
+.button-container {
+	position: relative;
+	margin-top: 0;
 }
 
-.view-order{
-    display: flex;
-    position: relative;
-    align-content: flex-end;
+.view-order {
+	display: flex;
+	position: relative;
+	align-content: flex-end;
 }
 
-.order-form{
-    position: absolute;
-    
+.order-form {
+	position: absolute;
+}
+
+.selected-item-img {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.selected-item-img {
+	margin-right: auto;
 }

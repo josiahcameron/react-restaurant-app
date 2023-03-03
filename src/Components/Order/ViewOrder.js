@@ -24,7 +24,6 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 			orderItems: orderItems,
 			specialInstructions: specialInstructions,
 		};
-		console.log(orderInfo);
 
 		setOrder([custname, [orderItems], specialInstructions]);
 
@@ -34,9 +33,10 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 	const handleOpen = () => {
 		setOpen(!open);
 		displayItem = orderItems.map((item) => item.name);
-		console.log(displayItem);
+		console.log(displayItem.join("\n"));
+		const displayItem2 = displayItem.join("\n");
 		displayItemHTML = orderItems.map((item) => (
-			<li key={item.name}>{item.name}</li>
+			<li key={item}>{item.name}</li>
 		));
 	};
 	const orderList = orderItems;
@@ -60,7 +60,7 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 								<ListGroup.Item style={{ fontSize: 15 }}>
 									{displayItem}
 									Menu Item:
-									<ul>{displayItemHTML}</ul>
+									<ul>{displayItem.join("\n")}</ul>
 								</ListGroup.Item>
 								<ListGroup.Item>
 									Price Total: ${calcOrderTotal()}
