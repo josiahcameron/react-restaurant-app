@@ -33,13 +33,15 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 	const handleOpen = () => {
 		setOpen(!open);
 		displayItem = orderItems.map((item) => item.name);
-		console.log(displayItem.join("\n"));
 		const displayItem2 = displayItem.join("\n");
-		displayItemHTML = orderItems.map((item) => (
-			<li key={item}>{item.name}</li>
-		));
+
+		console.log(displayItem);
 	};
 	const orderList = orderItems;
+	console.log(orderItems[0]);
+	displayItemHTML = orderItems?.map((item) => (
+		<li key={item}>{item.name}</li>
+	));
 
 	return (
 		<>
@@ -58,9 +60,7 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 							<Card.Header>Your Order: </Card.Header>
 							<ListGroup variant="flush">
 								<ListGroup.Item style={{ fontSize: 15 }}>
-									{displayItem}
-									Menu Item:
-									<ul>{displayItem.join("\n")}</ul>
+									Menu Item: {displayItemHTML}
 								</ListGroup.Item>
 								<ListGroup.Item>
 									Price Total: ${calcOrderTotal()}
