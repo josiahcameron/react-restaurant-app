@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/react-restaurant-app/static/css/main.f8810069.css",
-    "main.js": "/react-restaurant-app/static/js/main.14db4861.js",
+    "main.css": "/react-restaurant-app/static/css/main.cea27d9d.css",
+    "main.js": "/react-restaurant-app/static/js/main.18c06463.js",
     "static/js/787.6a1e1712.chunk.js": "/react-restaurant-app/static/js/787.6a1e1712.chunk.js",
-    "static/media/spaghetti.png": "/react-restaurant-app/static/media/spaghetti.2c8958ba7736bede1b43.png",
+    "static/media/tiramisu.jpg": "/react-restaurant-app/static/media/tiramisu.f3282740ef918a8d746a.jpg",
+    "static/media/garlic_bread.jpg": "/react-restaurant-app/static/media/garlic_bread.f6b41c9d459decb351bd.jpg",
+    "static/media/strawberry_gelato.jpg": "/react-restaurant-app/static/media/strawberry_gelato.9dda9c6ea3c502d721aa.jpg",
+    "static/media/wild_berry_tart.jpg": "/react-restaurant-app/static/media/wild_berry_tart.3a719a5c49107c247db9.jpg",
+    "static/media/side_salad.jpg": "/react-restaurant-app/static/media/side_salad.4e5a5d699ceac9cff361.jpg",
+    "static/media/chicken_alfredo.jpg": "/react-restaurant-app/static/media/chicken_alfredo.c240489912883ee6384e.jpg",
+    "static/media/spaghetti.jpg": "/react-restaurant-app/static/media/spaghetti.239dfa531144d9de7ffb.jpg",
     "index.html": "/react-restaurant-app/index.html",
-    "main.f8810069.css.map": "/react-restaurant-app/static/css/main.f8810069.css.map",
-    "main.14db4861.js.map": "/react-restaurant-app/static/js/main.14db4861.js.map",
+    "main.cea27d9d.css.map": "/react-restaurant-app/static/css/main.cea27d9d.css.map",
+    "main.18c06463.js.map": "/react-restaurant-app/static/js/main.18c06463.js.map",
     "787.6a1e1712.chunk.js.map": "/react-restaurant-app/static/js/787.6a1e1712.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8810069.css",
-    "static/js/main.14db4861.js"
+    "static/css/main.cea27d9d.css",
+    "static/js/main.18c06463.js"
   ]
 }
