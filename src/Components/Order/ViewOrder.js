@@ -6,7 +6,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import { nanoid } from "nanoid";
 
-function ViewOrder({ orderItems, total, calcOrderTotal }) {
+function ViewOrder({
+	orderItems,
+	total,
+	calcOrderTotal,
+	setOrderItems,
+	setPrices,
+}) {
 	// The default value on open will be false
 	const [open, setOpen] = useState(false);
 
@@ -29,6 +35,11 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 		setOrder([custname, [orderItems], specialInstructions]);
 
 		window.localStorage.setItem("order", JSON.stringify(orderInfo));
+		setOrder([]);
+		setOrderItems([]);
+		setCustName("");
+		setSpecialInstructions("");
+		setPrices([]);
 	};
 
 	const handleOpen = () => {

@@ -138,6 +138,8 @@ function Menu() {
 					<ViewOrder
 						orderItems={orderItems}
 						calcOrderTotal={calcOrderTotal}
+						setOrderItems={setOrderItems}
+						setPrices={setPrices}
 					/>
 				</div>
 			</Navbar>
