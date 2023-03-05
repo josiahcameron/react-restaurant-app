@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
 import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
+import { nanoid } from "nanoid";
 
 function ViewOrder({ orderItems, total, calcOrderTotal }) {
 	// The default value on open will be false
@@ -34,13 +35,11 @@ function ViewOrder({ orderItems, total, calcOrderTotal }) {
 		setOpen(!open);
 		displayItem = orderItems.map((item) => item.name);
 		const displayItem2 = displayItem.join("\n");
-
-		console.log(displayItem);
 	};
 	const orderList = orderItems;
-	console.log(orderItems[0]);
+
 	displayItemHTML = orderItems?.map((item) => (
-		<li key={item}>{item.name}</li>
+		<li key={nanoid()}>{item.name}</li>
 	));
 
 	return (

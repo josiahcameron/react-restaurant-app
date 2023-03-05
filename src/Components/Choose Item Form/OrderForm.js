@@ -20,9 +20,7 @@ function OrderForm({ show, selectedItem, addToOrder, handleClose }) {
 				<Modal.Body>
 					<Form>
 						<Form.Label>Description: </Form.Label>
-						<Form.Text id="passwordHelpBlock" muted>
-							{selectedItem?.description}
-						</Form.Text>
+						<Form.Text muted>{selectedItem?.description}</Form.Text>
 					</Form>
 				</Modal.Body>
 				<Modal.Footer>
