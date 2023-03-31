@@ -1,0 +1,111 @@
+#landing-page {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+#page-items {
+	margin-left: clamp(4rem, 20vw, 48rem);
+	position: relative;
+	z-index: 2;
+}
+
+#page-items:hover > .page-item {
+	opacity: 0.3;
+}
+
+#page-items:hover > .page-item:hover {
+	opacity: 1;
+	color: goldenrod;
+}
+
+.page-item {
+	color: white;
+	font-size: clamp(3rem, 8vw, 8rem);
+	font-family: "Ibarra Real Nova", serif;
+
+	display: block;
+	text-decoration: none;
+	padding: clamp(0.25, 0.5vw, 1rem) 0rem;
+	transition: opacity 400ms ease;
+}
+
+#landing-page-pattern {
+	height: 100vh;
+	width: 100vw;
+
+	background-image: radial-gradient(
+		rgba(2255, 255, 255, 0.1) 9%,
+		transparent 9%
+	);
+
+	background-position: 0% 0%;
+	background-size: 12vmin 12vmin;
+
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+
+	transition: opacity 800ms ease, background-size 800ms ease;
+}
+
+#page-items:hover ~ #landing-page-pattern {
+	background-size: 11vmin 11vmin;
+	opacity: 0.5;
+}
+
+#landing-page[data-active-index="0"] > #landing-page-pattern {
+	background-position: 0%-25%;
+}
+
+#landing-page[data-active-index="1"] > #landing-page-pattern {
+	background-position: 0%-50%;
+}
+
+#landing-page[data-active-index="2"] > #landing-page-pattern {
+	background-position: 0%-75%;
+}
+
+#landing-page[data-active-index="3"] > #landing-page-pattern {
+	background-position: 0%-100%;
+}
+
+#landing-page-image {
+	height: 100%;
+	width: 100%;
+
+	background-image: url("https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+
+	background-position: center 40%;
+	background-size: 110vmax;
+	opacity: 0.15;
+
+	transition: opacity 800ms ease, background-size 800ms ease,
+		background-position 800ms ease;
+}
+
+#page-items:hover ~ #landing-page-image {
+	background-size: 100vmax;
+	opacity: 0.1;
+}
+
+#landing-page[data-active-index="0"] > #landing-page-image {
+	background-position: center 45%;
+}
+
+#landing-page[data-active-index="1"] > #landing-page-image {
+	background-position: center 50%;
+}
+
+#landing-page[data-active-index="2"] > #landing-page-image {
+	background-position: center 55%;
+}
+
+#landing-page[data-active-index="3"] > #landing-page-image {
+	background-position: center 60%;
+}

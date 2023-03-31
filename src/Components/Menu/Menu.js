@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
+import { Button, Nav, Navbar, Container } from "react-bootstrap";
+
 import OrderForm from "../Choose Item Form/OrderForm";
 import ViewOrder from "../Order/ViewOrder";
 import { MENU_ITEMS } from "./Menu Items/MenuItems";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
 
 function Menu() {
 	let [selectedItem, setSelectedItem] = useState(null);

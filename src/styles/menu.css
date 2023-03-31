@@ -1,4 +1,5 @@
 @import url("navbar.css");
+@import url("landing_page.css");
 
 html {
 	box-sizing: border-box;
@@ -11,12 +12,12 @@ html {
 }
 
 body {
-	background: #f4f4f4;
+	background-color: rgb(20, 20, 20);
 	color: var(--dark-grey);
 	font-family: var(--primary-font);
 	font-size: 15px;
 	line-height: 1.55;
-	margin: 0;
+	margin: 0px;
 }
 
 .full-app {
