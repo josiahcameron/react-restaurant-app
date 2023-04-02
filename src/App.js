@@ -1,13 +1,22 @@
 import "./App.css";
 
-import Menu from "./Components/Menu/Menu";
-import LandingPage from "./Components/pages/LandingPage";
+import { Routes, Route } from "react-router-dom";
+
+import Menu from "./components/menu/Menu";
+import Home from "./components/pages/Home";
 
 function App() {
 	return (
 		<div>
-			{/* <Menu />; */}
-			<LandingPage />
+			{/* <Header /> */}
+			<div className="content-wrapper">
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="menu" element={<Menu />} />
+					{/* <Route path="reservation" element={<Reservation />} /> */}
+					{/* <Route path="admin" element={<Admin />} /> */}
+				</Routes>
+			</div>
 		</div>
 	);
 }

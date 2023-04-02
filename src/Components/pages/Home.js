@@ -13,7 +13,7 @@ function LandingPage() {
 		<div id="landing-page">
 			<div id="page-items">
 				<a href="/" className="page-item">
-					Home
+					Make a Reservation
 				</a>
 				<a href="/" className="page-item">
 					Order Here
