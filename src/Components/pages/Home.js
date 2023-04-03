@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function LandingPage() {
 	const landingPage = document.getElementById("landing-page");
 
@@ -12,18 +14,18 @@ function LandingPage() {
 	return (
 		<div id="landing-page">
 			<div id="page-items">
-				<a href="/" className="page-item">
+				<NavLink to="Reservation" className="page-item">
 					Make a Reservation
-				</a>
-				<a href="/" className="page-item">
-					Order Here
-				</a>
-				<a href="/" className="page-item">
+				</NavLink>
+				<NavLink to="/menu" className="page-item">
+					Menu
+				</NavLink>
+				<NavLink to="/" className="page-item">
 					About
-				</a>
-				<a href="/" className="page-item">
+				</NavLink>
+				<NavLink to="/" className="page-item">
 					Contact Us
-				</a>
+				</NavLink>
 			</div>
 			<div id="landing-page-pattern"></div>
 			<div id="landing-page-image"></div>

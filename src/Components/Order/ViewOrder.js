@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import Collapse from "react-bootstrap/Collapse";
-import ListGroup from "react-bootstrap/ListGroup";
-import Form from "react-bootstrap/Form";
+import {
+	Button,
+	Card,
+	Collapse,
+	ListGroup,
+	Form,
+	Offcanvas,
+} from "react-bootstrap";
 import { nanoid } from "nanoid";
 
 function ViewOrder({
@@ -15,6 +18,7 @@ function ViewOrder({
 }) {
 	// The default value on open will be false
 	const [open, setOpen] = useState(false);
+	const [show, setShow] = useState(true);
 
 	const [order, setOrder] = useState([]);
 	const [custname, setCustName] = useState("");
@@ -50,68 +54,81 @@ function ViewOrder({
 	const orderList = orderItems;
 
 	displayItemHTML = orderItems?.map((item) => (
-		<li key={nanoid()}>{item.name}</li>
+		<div className="menu-item" key={nanoid()}>
+			<p>{item.name}</p>${item.price.toFixed(2)}
+		</div>
 	));
 
 	return (
 		<>
-			<Button
-				onClick={() => handleOpen()}
-				aria-controls="example-collapse-text"
-				aria-expanded={open}
-				className="view-order-button"
+			<Offcanvas
+				show={show}
+				scroll={true}
+				backdrop={false}
+				placement="end"
+				className="cart"
 			>
-				View Order
-			</Button>
-			<div>
-				<Collapse in={open} dimension="width">
+				<Offcanvas.Body>
 					<div id="example-collapse-text" className="order-form">
-						<Card style={{ width: "18rem" }}>
-							<Card.Header>Your Order: </Card.Header>
-							<ListGroup variant="flush">
-								<ListGroup.Item style={{ fontSize: 15 }}>
-									Menu Item: {displayItemHTML}
-								</ListGroup.Item>
-								<ListGroup.Item>
-									Price Total: ${calcOrderTotal()}
-								</ListGroup.Item>
-
-								<Form.Group
-									className="mb-3"
-									controlId="exampleForm.ControlTextarea1"
+						<div>
+							<h3>Your Order:</h3>
+							<ul>
+								<li
+									className="item-name-list"
+									style={{ fontSize: 15 }}
 								>
-									<Form.Label>
-										Special Instructions
-									</Form.Label>
-									<Form.Control
-										as="textarea"
-										rows={3}
-										placeholder="Put Special Requests Here (Extra Utensils, Parmesan, Etc.)"
-										value={specialInstructions}
-										onChange={(e) =>
-											setSpecialInstructions(
-												e.target.value
-											)
-										}
-									/>
-									<Form.Label>Your Name</Form.Label>
-									<Form.Control
-										type="name"
-										placeholder="Enter Name Here"
-										value={custname}
-										onChange={(e) =>
-											setCustName(e.target.value)
-										}
-									/>
-								</Form.Group>
-							</ListGroup>
-						</Card>
-						<Button variant="primary" onClick={confirmOrder}>
-							Confirm Order
-						</Button>
+									<h4>Menu Item:</h4> {displayItemHTML}
+								</li>
+								<li>
+									<div className="total-price">
+										<p>Price Total:</p>{" "}
+										<p>${calcOrderTotal()}</p>
+									</div>
+								</li>
+								<div className="cart-form">
+									<Form.Group
+										className="mb-3"
+										controlId="exampleForm.ControlTextarea1"
+									>
+										<Form.Label>
+											Special Instructions
+										</Form.Label>
+										<Form.Control
+											as="textarea"
+											rows={3}
+											placeholder="Put Special Requests Here (Extra Utensils, Parmesan, Etc.)"
+											value={specialInstructions}
+											onChange={(e) =>
+												setSpecialInstructions(
+													e.target.value
+												)
+											}
+										/>
+										<Form.Label>Your Name</Form.Label>
+										<Form.Control
+											type="name"
+											placeholder="Enter Name Here"
+											value={custname}
+											onChange={(e) =>
+												setCustName(e.target.value)
+											}
+										/>
+									</Form.Group>
+									<div className="confirm-order-button-container">
+										<Button
+											variant="primary"
+											onClick={confirmOrder}
+											className="rounded-0"
+										>
+											Confirm Order
+										</Button>
+									</div>
+								</div>
+							</ul>
+						</div>
 					</div>
-				</Collapse>
-			</div>
+				</Offcanvas.Body>
+			</Offcanvas>
 		</>
 	);
 }

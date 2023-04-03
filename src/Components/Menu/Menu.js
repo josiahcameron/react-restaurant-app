@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Nav, Navbar, Container } from "react-bootstrap";
+import { Button, Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
 
 import OrderForm from "../choose_item_form/OrderForm";
 import ViewOrder from "../order/ViewOrder";
@@ -17,7 +17,7 @@ function Menu() {
 	const buttons = MENU_ITEMS.filter((item) =>
 		filter ? item.type.toLowerCase() === filter : item
 	).map((item, index) => (
-		<div className="mb-1 mt-1" key={index}>
+		<div key={index} className="d-grid gap-2">
 			<Button
 				onClick={() => viewFoodDetails(item)}
 				variant="outline-secondary"
@@ -103,36 +103,32 @@ function Menu() {
 
 	return (
 		<div className="full-app">
-			<Navbar className="nav-bar" bg="light" expand="lg" fixed="top">
-				<div className="menu-categories">
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="me-auto">
-							<Nav.Link href="#" onClick={() => setFilter("")}>
-								All Items
-							</Nav.Link>
-							<Nav.Link
-								href="#"
-								onClick={() => setFilter("entree")}
-							>
-								Entrees
-							</Nav.Link>
-							<Nav.Link
-								href="#"
-								onClick={() => setFilter("dessert")}
-							>
-								Desserts
-							</Nav.Link>
-							<Nav.Link
-								href="#"
-								onClick={() => setFilter("side")}
-							>
-								Sides
-							</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</div>
-				<div className="view-order-button">
+			<OrderForm
+				show={show}
+				selectedItem={selectedItem}
+				addToOrder={addToOrder}
+				orderItems={orderItems}
+				handleClose={handleClose}
+			/>
+			<section className="content-body">
+				<Nav className="flex-column menu-nav">
+					<Nav.Link href="#" onClick={() => setFilter("")}>
+						All Items
+					</Nav.Link>
+					<Nav.Link href="#" onClick={() => setFilter("entree")}>
+						Entrees
+					</Nav.Link>
+					<Nav.Link href="#" onClick={() => setFilter("dessert")}>
+						Desserts
+					</Nav.Link>
+					<Nav.Link href="#" onClick={() => setFilter("side")}>
+						Sides
+					</Nav.Link>
+				</Nav>
+
+				<div className="menu-buttons">{buttons}</div>
+				<div className="view-order-button"></div>
+				<div className="cart-container">
 					<ViewOrder
 						orderItems={orderItems}
 						calcOrderTotal={calcOrderTotal}
@@ -140,18 +136,6 @@ function Menu() {
 						setPrices={setPrices}
 					/>
 				</div>
-			</Navbar>
-			<section className="content-body">
-				<h2>All Items</h2>
-
-				<div className="menu-buttons">{buttons}</div>
-				<OrderForm
-					show={show}
-					selectedItem={selectedItem}
-					addToOrder={addToOrder}
-					orderItems={orderItems}
-					handleClose={handleClose}
-				/>
 			</section>
 		</div>
 	);

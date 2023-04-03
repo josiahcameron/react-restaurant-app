@@ -14,7 +14,7 @@ html {
 
 body {
 	background-color: rgb(20, 20, 20);
-	color: var(--dark-grey);
+	color: goldenrod;
 	font-family: var(--primary-font);
 	font-size: 15px;
 	line-height: 1.55;
@@ -22,29 +22,41 @@ body {
 }
 
 .full-app {
+	position: relative;
 	width: 100%;
-	padding-left: 7%;
-	padding-right: 7%;
+	height: 100vh;
 }
 
 .content-body {
 	display: flex;
-	flex-direction: column;
-	margin: 100px 150px 100px 150px;
+	position: absolute;
+	justify-content: space-between;
+	margin: 100px 0px;
+	padding: 0px 0 0 5%;
+	width: 100vw;
+	height: 90vh;
+	right: 0;
+	background-color: blanchedalmond;
+}
+
+.menu-nav {
+	margin-right: 30px;
+	/* width: %; */
+	font-size: 30px;
 }
 
 .menu-buttons {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 20px;
+	flex-direction: column;
+	/* flex-wrap: wrap; */
+	width: 30%;
+	gap: 10px;
 }
 
 .menu-item-button {
+	position: relative;
 	display: flex;
 	flex-direction: row;
-	width: 500px;
 	text-align: left;
 	justify-content: space-between;
 	max-height: 150px;
@@ -59,7 +71,7 @@ body {
 	align-items: center;
 	text-overflow: ellipsis;
 	overflow: auto;
-	max-width: 400px;
+	max-width: 350px;
 	max-height: 60px;
 }
 
@@ -73,9 +85,13 @@ body {
 }
 
 .item-img {
-	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
 	max-width: 120px;
-	min-height: 60px;
+	height: 100%;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .button-container {
@@ -90,14 +106,10 @@ body {
 }
 
 .order-form {
-	position: absolute;
 }
 
 .selected-item-img {
 	max-width: 100px;
 	max-height: 100px;
-}
-
-.selected-item-img {
 	margin-right: auto;
 }

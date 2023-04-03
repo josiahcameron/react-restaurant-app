@@ -1,3 +1,26 @@
-.view-order-button{
+.confirm-order-button {
+	border-radius: 0px;
+}
 
+.confirm-order-button-container {
+	text-align: center;
+}
+
+.cart {
+	background-color: #f8caa0;
+	color: #301e14;
+}
+
+.menu-item {
+	font-size: x-large;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 20px;
+}
+
+.total-price {
+	font-size: x-large;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 20px;
 }
