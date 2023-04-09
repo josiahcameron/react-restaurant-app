@@ -18,15 +18,10 @@ function Menu() {
 		filter ? item.type.toLowerCase() === filter : item
 	).map((item, index) => (
 		<div key={index} className="d-grid gap-2">
-			<Button
-				onClick={() => viewFoodDetails(item)}
-				variant="outline-secondary"
-				className="menu-item-button"
-				size="lg"
-			>
+			<div className="menu-item-button">
 				<div className="button-right">
 					<div className="card-header">
-						<span className="menu-item-name">{item.name}</span>
+						<h5 className="menu-item-name">{item.name}</h5>
 					</div>
 					<div className="menu-item-description">
 						<span>{item.description}</span>
@@ -36,9 +31,17 @@ function Menu() {
 							${item.price.toFixed(2)}
 						</span>
 					</div>
+					<img className="item-img" src={item.img} alt="" />
+					<Button
+						onClick={() => viewFoodDetails(item)}
+						variant="primary"
+						size="md"
+						className="view-details-button"
+					>
+						View Details
+					</Button>
 				</div>
-				<img className="item-img" src={item.img} alt="" />
-			</Button>
+			</div>
 		</div>
 	));
 
@@ -112,16 +115,32 @@ function Menu() {
 			/>
 			<section className="content-body">
 				<Nav className="flex-column menu-nav">
-					<Nav.Link href="#" onClick={() => setFilter("")}>
+					<Nav.Link
+						className="category"
+						href="#"
+						onClick={() => setFilter("")}
+					>
 						All Items
 					</Nav.Link>
-					<Nav.Link href="#" onClick={() => setFilter("entree")}>
+					<Nav.Link
+						className="category"
+						href="#"
+						onClick={() => setFilter("entree")}
+					>
 						Entrees
 					</Nav.Link>
-					<Nav.Link href="#" onClick={() => setFilter("dessert")}>
+					<Nav.Link
+						className="category"
+						href="#"
+						onClick={() => setFilter("dessert")}
+					>
 						Desserts
 					</Nav.Link>
-					<Nav.Link href="#" onClick={() => setFilter("side")}>
+					<Nav.Link
+						className="category"
+						href="#"
+						onClick={() => setFilter("side")}
+					>
 						Sides
 					</Nav.Link>
 				</Nav>

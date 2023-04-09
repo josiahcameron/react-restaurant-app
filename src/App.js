@@ -11,7 +11,7 @@ function App() {
 			{/* <Header /> */}
 			<div className="content-wrapper">
 				<Routes>
-					<Route path="/" element={<Home />} />
+					<Route path="/react-restaurant-app/" element={<Home />} />
 					<Route path="menu" element={<Menu />} />
 					{/* <Route path="reservation" element={<Reservation />} /> */}
 					{/* <Route path="admin" element={<Admin />} /> */}

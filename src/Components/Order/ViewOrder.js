@@ -18,11 +18,15 @@ function ViewOrder({
 }) {
 	// The default value on open will be false
 	const [open, setOpen] = useState(false);
-	const [show, setShow] = useState(true);
 
 	const [order, setOrder] = useState([]);
 	const [custname, setCustName] = useState("");
 	const [specialInstructions, setSpecialInstructions] = useState("");
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
 	let displayItem = [];
 	let displayItemHTML = [];
 	// const [test, setTest] = useState(testing)
@@ -61,13 +65,26 @@ function ViewOrder({
 
 	return (
 		<>
+			<Button
+				variant="primary"
+				className="d-lg-none"
+				onClick={handleShow}
+			>
+				Launch
+			</Button>
+
 			<Offcanvas
 				show={show}
+				onHide={handleClose}
+				responsive="lg"
 				scroll={true}
 				backdrop={false}
 				placement="end"
 				className="cart"
 			>
+				<Offcanvas.Header closeButton>
+					<Offcanvas.Title>Responsive offcanvas</Offcanvas.Title>
+				</Offcanvas.Header>
 				<Offcanvas.Body>
 					<div id="example-collapse-text" className="order-form">
 						<div>
@@ -116,9 +133,9 @@ function ViewOrder({
 									</Form.Group>
 									<div className="confirm-order-button-container">
 										<Button
-											variant="primary"
+											variant="outline-warning"
 											onClick={confirmOrder}
-											className="rounded-0"
+											className="rounded-0 confirm-order-button"
 										>
 											Confirm Order
 										</Button>

@@ -24,3 +24,7 @@
 	justify-content: space-between;
 	margin-right: 20px;
 }
+
+.confirm-order-button {
+	background-color: #301e14;
+}
